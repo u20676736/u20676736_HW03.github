@@ -1,0 +1,38 @@
+﻿
+
+@model List<FileModel>
+@using u20676736_HW03.Models
+
+        <h2>Video Files</h2>
+        <div class="container">
+            <div class="row">
+                @foreach (var filemodel in Model)
+
+                {
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card h-100" style="width: 20rem;">
+                            <div>
+                                <a href="@filemodel.Videos" class="card-img-top"></a>
+                            </div>
+                            <div class="card-body">
+                                <button>
+                                    @Html.ActionLink("Download", "DownloadFile",
+                          new { fileName = filemodel.Videos })
+                                </button>
+                                <button>
+                                    @Html.ActionLink("DELETE", "DeleteFile",
+                        new { fileName = filemodel.Videos },
+                        new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <script>
+            $(document).ready(function ($) {
+                $(".gallery a").fancybox();
+            });
+        </script>
+

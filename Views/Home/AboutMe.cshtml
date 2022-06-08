@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "AboutMe";
+}
+
+<h2>AboutMe</h2>
+<h2>Home</h2>
+@{ string result =
+      "My name is Khanyi Manzini, I am studnet at the Univeristy of Pretoria, studying Bsc Physics. I have a passion for scince, math and recently programming."+"\n"+"I am hard working , kind."
+      +"\n"+ "My  favourite hobbies inculde cooking, painting/drawing and reading. With cooking I love to create delicious recipes. I watch shows Masterchef, Chooped, FoodTube to get inspiration on the type of food I want to cook."
+      + "\n"+ "I aspire in becoming a software developer or computational physicist. Maybe owning my own business one day."+ "\n"+
+      "I want travel to different countries all over the world and learn about different cultures."+ "\n"+ "I want to go to Italy, France, Thailand, Japan, Egypt, Kenya"+
+      "\n"+ "I really want to see the pyramids and the Colosseum";
+
+
+    
+
+
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <p>@result</p>
+            </div>
+
+            <div class="col-xs-6">
+                <label for="doc">Document</label>
+                <input type="radio" id="doc" name="fav_language" value="doc" checked="checked">
+                <br>
+                <label for="image">Images</label>
+                <input type="radio" id="image" name="fav_language" value="~/Media/Images/Khanyi Images.jpg">
+                <br />
+                <label for="video">Video</label>
+                <input type="radio" id="video" name="fav_language" value="">
+            </div>
+            <div>
+                <button>Browse</button>
+            </div>
+            <div>
+                <p>&nbsp;</p>
+                <p><input type="submit" value="Submit" /></p>
+
+            </div>
+        </div>
+    </div>
+<script>
+    $(function(){
+    var checkedInput = $("#image").is(":checked");        
+});
+</script>
+

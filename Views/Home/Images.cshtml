@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Images";
+}
+@model List<u20676736_HW03.Models.FileModel>
+@using u20676736_HW03.Models
+List<FileModel>filemodel = new List<FileModel>();
+
+        <h2>Images</h2>
+        <div class="container">
+            <div class="row">
+                @foreach (var filemodel in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card h-100" style="width: 20rem;">
+                            <img src=@filemodel.Images ) class="card-img-top">
+                            <div class="card-body">
+                                <button>
+                                    @Html.ActionLink("Download", "DownloadFile",
+                          new { fileName = filemodel.Images })
+                                </button>
+                                <button>
+                                    @Html.ActionLink("DELETE", "DeleteFile",
+                        new { fileName = filemodel.Images },
+                        new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function ($) {
+                $(".gallery a").fancybox();
+            });
+        </script>
+
